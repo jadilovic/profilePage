@@ -8,7 +8,10 @@ const {
 	deleteProject,
 } = require('../controllers/project');
 
-router.route('/').post(createProject).get(getAllProjects);
+const { validate } = require('../middleware/validator');
+
+router.route('/').post(validate('createProject'), createProject);
+router.route('/').get(getAllProjects);
 router.route('/:id').patch(updateProject).delete(deleteProject);
 
 module.exports = router;

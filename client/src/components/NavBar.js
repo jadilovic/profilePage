@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
 const pages = [
-	{ page: 'Profile', path: '/' },
+	{ page: 'Home', path: '/' },
 	{ page: 'Education', path: '/education' },
 	{ page: 'Experience', path: '/experience' },
 	{ page: 'Technologies', path: '/technologies' },
@@ -41,7 +41,7 @@ const NavBar = () => {
 	};
 
 	return (
-		<AppBar position="static">
+		<AppBar position="relative">
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Typography

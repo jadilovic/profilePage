@@ -7,6 +7,7 @@ import Auth from './pages/Auth';
 import Project from './pages/Project';
 import NavBar from './components/NavBar';
 import useAuth from './util/useAuth';
+import './index.css';
 
 function App() {
 	return (

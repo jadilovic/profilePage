@@ -1,8 +1,14 @@
 const Project = require('../models/Project');
 const { StatusCodes } = require('http-status-codes');
 require('dotenv').config();
+const { validationResult } = require('express-validator');
 
 const createProject = async (req, res) => {
+	const errors = validationResult(req);
+	if (!errors.isEmpty()) {
+		// Validation errors
+		return res.status(400).json({ errors: errors.array() });
+	}
 	const project = await Project.create(req.body);
 	return res.status(StatusCodes.CREATED).json({ project });
 };
