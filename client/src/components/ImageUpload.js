@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import '../App.css';
 const ImageUpload = (props) => {
-	const { handlePhotoURL } = props;
+	const { handlePhotoURL, photoURL } = props;
 	const [image, setImage] = useState('');
-	const [url, setUrl] = useState('');
+	// const [url, setUrl] = useState('');
+
 	const uploadImage = () => {
 		console.log('test');
 		const data = new FormData();
@@ -17,25 +19,37 @@ const ImageUpload = (props) => {
 			.then((data) => {
 				console.log(data.url);
 				handlePhotoURL(data.url);
-				setUrl(data.url);
+				// setUrl(data.url);
 			})
 			.catch((err) => console.log(err));
 	};
+
 	return (
 		<div>
-			<div className="form">
-				<input
-					className="input"
-					type="file"
-					onChange={(e) => setImage(e.target.files[0])}
-				></input>
-				<button className="button" onClick={uploadImage}>
-					Upload
-				</button>
-			</div>
 			<div>
-				<h1>Uploaded image will be displayed here</h1>
-				<img alt="slika" src={url} />
+				{photoURL ? (
+					<div>
+						<input
+							readOnly
+							className="input"
+							type="text"
+							value={photoURL}
+						></input>
+						<img className="center" alt="slika" src={photoURL} />
+					</div>
+				) : (
+					<>
+						<input
+							className="input"
+							type="file"
+							onChange={(e) => setImage(e.target.files[0])}
+						></input>
+						<button className="button" onClick={uploadImage}>
+							Upload
+						</button>
+						<h5>Uploaded image will be displayed here</h5>
+					</>
+				)}
 			</div>
 		</div>
 	);

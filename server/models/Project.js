@@ -3,23 +3,23 @@ const mongoose = require('mongoose');
 const ProjectSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required: true,
+		require: true,
 	},
 	description: {
 		type: String,
-		required: true,
+		require: true,
 	},
 	photoURL: {
 		type: String,
-		required: true,
+		require: true,
 	},
 	gitHubURL: {
 		type: String,
-		required: true,
+		require: true,
 	},
 	deployedURL: {
 		type: String,
-		required: true,
+		require: true,
 	},
 });
 

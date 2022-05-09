@@ -66,7 +66,7 @@ const Project = () => {
 
 				errorMsg.push(msg);
 			}
-
+			console.log(errorMsg);
 			setFormErrors(errorMsg);
 		} else {
 			// Handle generic error
@@ -84,9 +84,10 @@ const Project = () => {
 	};
 
 	const handlePhotoURL = (url) => {
+		console.log(url);
 		setProjectData({
 			...projectData,
-			photoURL: url,
+			photoURL: url.toString(),
 		});
 		setFormErrors([]);
 		setFormSuccess('');
@@ -101,8 +102,9 @@ const Project = () => {
 	}
 
 	return (
-		<div>
-			<form onSubmit={handleSubmit} className="form">
+		<>
+			<div className="form">
+				{/* <form onSubmit={handleSubmit} className="form"> */}
 				<h1>Create New Project</h1>
 				<AlertSuccess success={formSuccess} />
 				<AlertError errors={formErrors} />
@@ -122,21 +124,17 @@ const Project = () => {
 						type="text"
 						name="description"
 						className="input"
-						value={projectData.age}
+						value={projectData.description}
 						onInput={handleChange}
 					/>
 				</div>
-				{/* <div>
-					<label>Photo URL</label>
-					<ImageUpload handlePhotoURL={handlePhotoURL} />
-				</div> */}
 				<div>
 					<label>GitHub URL</label>
 					<input
 						type="text"
 						name="gitHubURL"
 						className="input"
-						value={projectData.email}
+						value={projectData.gitHubURL}
 						onInput={handleChange}
 					/>
 				</div>
@@ -146,22 +144,27 @@ const Project = () => {
 						type="text"
 						name="deployedURL"
 						className="input"
-						value={projectData.email}
+						value={projectData.deployedURL}
 						onInput={handleChange}
 					/>
 				</div>
-				<input type="submit" className="button" value="Submit" />
-			</form>
-			<div>
-				<label>Photo URL</label>
-				<ImageUpload handlePhotoURL={handlePhotoURL} />
+				<div>
+					<label>Photo URL</label>
+					<ImageUpload
+						handlePhotoURL={handlePhotoURL}
+						photoURL={projectData.photoURL}
+					/>
+				</div>
+				<button className="button" onClick={handleSubmit}>
+					Submit
+				</button>
 			</div>
 			<ul>
 				{projects.map((project, index) => {
 					return <li key={index}>{project.name}</li>;
 				})}
 			</ul>
-		</div>
+		</>
 	);
 };
 

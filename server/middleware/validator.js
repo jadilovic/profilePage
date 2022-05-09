@@ -20,20 +20,20 @@ const validate = (method) => {
 					.not()
 					.isEmpty()
 					.withMessage('Photo URL is required')
-					.trim()
-					.escape(),
+					.trim(),
+				// .escape(),
 				body('gitHubURL')
 					.not()
 					.isEmpty()
 					.withMessage('GitHub URL is required')
-					.trim()
-					.escape(),
+					.trim(),
+				// .escape(),
 				body('deployedURL')
 					.not()
 					.isEmpty()
 					.withMessage('Deployed URL is required')
-					.trim()
-					.escape(),
+					.trim(),
+				// .escape(),
 			];
 		}
 	}
