@@ -6,6 +6,7 @@ const {
 	getAllProjects,
 	updateProject,
 	deleteProject,
+	deleteCloudinaryImage,
 } = require('../controllers/project');
 
 const { validate } = require('../middleware/validator');
@@ -13,5 +14,6 @@ const { validate } = require('../middleware/validator');
 router.route('/').post(validate('createProject'), createProject);
 router.route('/').get(getAllProjects);
 router.route('/:id').patch(updateProject).delete(deleteProject);
+router.route('/images/:id').delete(deleteCloudinaryImage);
 
 module.exports = router;

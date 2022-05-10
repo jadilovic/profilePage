@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
@@ -18,41 +18,21 @@ const Project = () => {
 	const [projectData, setProjectData] = useState(initialProjectData);
 	const [formSuccess, setFormSuccess] = useState('');
 	const [formErrors, setFormErrors] = useState([]);
-	const [projects, setProjects] = useState([]);
-	const [loading, setLoading] = useState(true);
 	const [photoURL, setPhotoURL] = useState('');
-
-	const getProjects = async () => {
-		try {
-			const response = await axios.get('http://localhost:8080/api/v1/project');
-			console.log(response.data.projects);
-			setProjects(response.data.projects.reverse());
-			setLoading(false);
-		} catch (error) {
-			console.log(error.message);
-		}
-	};
-
-	useEffect(() => {
-		getProjects();
-	}, []);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		setLoading(true);
 		try {
 			// Send POST request
 			await axios.post('http://localhost:8080/api/v1/project', projectData);
-
 			// HTTP req successful
 			setFormSuccess('New Project Created');
-
 			// Reset form data
 			setProjectData(initialProjectData);
+			setPhotoURL('');
 		} catch (err) {
 			handleErrors(err);
 		}
-		getProjects();
 	};
 
 	const handleErrors = (err) => {
@@ -84,22 +64,29 @@ const Project = () => {
 	};
 
 	const handlePhotoURL = (url) => {
-		console.log(url);
-		setProjectData({
-			...projectData,
-			photoURL: url.toString(),
-		});
+		if (url) {
+			setProjectData({
+				...projectData,
+				photoURL: url,
+			});
+			setPhotoURL(url);
+		} else {
+			setProjectData({
+				...projectData,
+				photoURL: '',
+			});
+		}
 		setFormErrors([]);
 		setFormSuccess('');
 	};
 
-	if (loading) {
-		return (
-			<Box sx={{ display: 'flex' }}>
-				<CircularProgress />
-			</Box>
-		);
-	}
+	// if (loading) {
+	// 	return (
+	// 		<Box sx={{ display: 'flex' }}>
+	// 			<CircularProgress />
+	// 		</Box>
+	// 	);
+	// }
 
 	return (
 		<>
@@ -152,18 +139,14 @@ const Project = () => {
 					<label>Photo URL</label>
 					<ImageUpload
 						handlePhotoURL={handlePhotoURL}
-						photoURL={projectData.photoURL}
+						setPhotoURL={setPhotoURL}
+						photoURL={photoURL}
 					/>
 				</div>
 				<button className="button" onClick={handleSubmit}>
 					Submit
 				</button>
 			</div>
-			<ul>
-				{projects.map((project, index) => {
-					return <li key={index}>{project.name}</li>;
-				})}
-			</ul>
 		</>
 	);
 };

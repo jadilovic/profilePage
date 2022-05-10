@@ -2,6 +2,14 @@ const Project = require('../models/Project');
 const { StatusCodes } = require('http-status-codes');
 require('dotenv').config();
 const { validationResult } = require('express-validator');
+var cloudinary = require('cloudinary').v2;
+
+// Change cloud name, API Key, and API Secret below
+cloudinary.config({
+	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const createProject = async (req, res) => {
 	const errors = validationResult(req);
@@ -34,9 +42,20 @@ const deleteProject = async (req, res) => {
 	res.status(StatusCodes.OK).json({ deletedProject });
 };
 
+const deleteCloudinaryImage = async (req, res) => {
+	const {
+		params: { id: urlPublicId },
+	} = req;
+	console.log('url id : ', urlPublicId);
+	cloudinary.uploader.destroy(urlPublicId, function (result) {
+		res.status(StatusCodes.OK).json({ result });
+	});
+};
+
 module.exports = {
 	createProject,
 	getAllProjects,
 	updateProject,
 	deleteProject,
+	deleteCloudinaryImage,
 };
