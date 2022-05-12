@@ -18,8 +18,6 @@ import {
 import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
-import mernImage from '../images/mernImage.png';
-import fullStackImg from '../images/fullStackImg.jpeg';
 import softwareDeveloper from '../images/softwareDeveloper.png';
 import gitHub from '../images/gitHub.png';
 import freeCodeCamp from '../images/freeCodeCamp.png';
@@ -46,7 +44,6 @@ export default function Album() {
 	const getProjects = async () => {
 		try {
 			const response = await axios.get('http://localhost:8080/api/v1/project');
-			console.log(response.data.projects);
 			setProjects(response.data.projects);
 			setLoading(false);
 		} catch (error) {
@@ -106,6 +103,7 @@ export default function Album() {
 							contribute with my technical and business skills. Below, you can
 							find some of the projects and their source code.
 						</Typography>
+						<hr></hr>
 					</Container>
 				</Box>
 				<Container sx={{ py: 1 }} maxWidth="md">
@@ -134,10 +132,14 @@ export default function Album() {
 									</CardContent>
 									<CardActions>
 										<Button variant="contained" size="small">
-											<a href={card.gitHubURL}>Code</a>
+											<a style={{ color: 'white' }} href={card.gitHubURL}>
+												Code
+											</a>
 										</Button>
 										<Button variant="contained" color="warning" size="small">
-											<a href={card.deployedURL}>Demo</a>
+											<a style={{ color: 'white' }} href={card.deployedURL}>
+												Demo
+											</a>
 										</Button>
 									</CardActions>
 								</Card>

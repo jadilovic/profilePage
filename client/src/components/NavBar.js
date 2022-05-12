@@ -19,7 +19,7 @@ const pages = [
 	{ page: 'Experience', path: '/experience' },
 	{ page: 'Technologies', path: '/technologies' },
 ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Contact', 'Account', 'Project', 'Logout'];
 
 const NavBar = () => {
 	const [anchorElNav, setAnchorElNav] = useState(null);
@@ -85,7 +85,9 @@ const NavBar = () => {
 							{pages.map((page) => (
 								<MenuItem key={page.page} onClick={handleCloseNavMenu}>
 									<Link to={page.path}>
-										<Typography textAlign="center">{page.page}</Typography>
+										<Typography color="black" textAlign="center">
+											{page.page}
+										</Typography>
 									</Link>
 								</MenuItem>
 							))}
@@ -120,9 +122,13 @@ const NavBar = () => {
 					</Box>
 
 					<Box sx={{ flexGrow: 0 }}>
-						<Tooltip title="Open settings">
+						<Tooltip title="Contact Info">
 							<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-								<Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+								<Avatar
+									style={{ color: 'black' }}
+									alt="JA"
+									src="/static/images/avatar/2.jpg"
+								/>
 							</IconButton>
 						</Tooltip>
 						<Menu
