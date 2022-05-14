@@ -104,20 +104,20 @@ const NavBar = () => {
 					</Typography>
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 						{pages.map((page) => (
-							<Button
-								variant="outlined"
-								color="inherit"
+							<Link
 								key={page.page}
-								onClick={handleCloseNavMenu}
-								sx={{ mr: 5, my: 2, color: 'white', display: 'block' }}
+								style={{ textDecoration: 'none', color: 'white' }}
+								to={page.path}
 							>
-								<Link
-									style={{ textDecoration: 'none', color: 'white' }}
-									to={page.path}
+								<Button
+									variant="outlined"
+									color="inherit"
+									onClick={handleCloseNavMenu}
+									sx={{ mr: 5, my: 2, color: 'white', display: 'block' }}
 								>
 									{page.page}
-								</Link>
-							</Button>
+								</Button>
+							</Link>
 						))}
 					</Box>
 

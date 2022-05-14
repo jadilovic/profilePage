@@ -45,6 +45,26 @@ export default function Education() {
 						<img alt="du" height={35} src={davenport} />
 					</a>
 				</div>
+				<Typography
+					style={{ paddingTop: 45 }}
+					variant="h5"
+					component="h6"
+					gutterBottom
+				>
+					Professional Skills
+				</Typography>
+				<Typography variant="h6" component="h6" gutterBottom>
+					{'Languages: Bosnian, German and English'}
+				</Typography>
+				<Typography variant="body1">
+					Team building and project development.
+				</Typography>
+				<Typography variant="body1">
+					Excellent partner communication.
+				</Typography>
+				<Typography variant="body1">
+					Effective in analytical and coordination activities.
+				</Typography>
 			</Container>
 			<Box
 				component="footer"
