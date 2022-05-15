@@ -34,6 +34,7 @@ const SubCard = forwardRef(
 			<Card
 				ref={ref}
 				sx={{
+					marginTop: '10px',
 					border: '1px solid',
 					borderColor: theme.palette.primary.light,
 					':hover': {
@@ -71,12 +72,7 @@ const SubCard = forwardRef(
 
 				{/* card content */}
 				{content && (
-					<CardContent
-						// sx={{ p: 2.5, ...contentSX }}
-						className={contentClass || ''}
-					>
-						{children}
-					</CardContent>
+					<CardContent className={contentClass || ''}>{children}</CardContent>
 				)}
 				{!content && children}
 			</Card>

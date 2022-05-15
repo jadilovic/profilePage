@@ -10,6 +10,13 @@ import MainCard from '../components/MainCard';
 import SecondaryAction from '../components/CardSecondaryAction';
 import { gridSpacing } from '../util/constant';
 import javaScript from '../images/javaScript.png';
+import reactJs from '../images/reactJs.png';
+import bootstrap from '../images/bootstrap.png';
+import materialUi from '../images/materialUi.png';
+import java from '../images/java.png';
+import ExpressJS from '../images/ExpressJS.png';
+import nodeJs from '../images/nodeJs.png';
+import spring from '../images/spring.png';
 
 // ===============================|| SHADOW BOX ||=============================== //
 
@@ -34,78 +41,73 @@ ShadowBox.propTypes = {
 	shadow: PropTypes.string.isRequired,
 };
 
-const theme = createTheme();
-
 // ============================|| UTILITIES SHADOW ||============================ //
 
-const Technologies = () => (
-	<Container maxWidth="lg">
-		<Grid item xs={12}>
-			<SubCard title="Basic Shadow">
-				<Grid container spacing={2}>
-					<Grid
-						style={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-						}}
-						item
-						xs={12}
-						sm={6}
-						md={4}
-						lg={3}
-					>
-						{/* <ShadowBox shadow="0"> */}
-						<img
-							style={{
-								maxHeight: 70,
-							}}
-							alt="js"
-							src={javaScript}
-						/>
-						{/* </ShadowBox> */}
+const Technologies = () => {
+	const frontendLogos = [javaScript, reactJs, bootstrap, materialUi];
+	const backendLogos = [java, spring, nodeJs, ExpressJS];
+	return (
+		<Container maxWidth="lg">
+			<Grid item xs={12}>
+				<SubCard title="Frontend">
+					<Grid container spacing={2}>
+						{frontendLogos.map((technology, index) => {
+							return (
+								<Grid
+									key={index}
+									style={{
+										display: 'flex',
+										justifyContent: 'center',
+										alignItems: 'center',
+									}}
+									item
+									xs={12}
+									sm={6}
+									lg={3}
+								>
+									<img
+										style={{
+											maxHeight: 70,
+										}}
+										alt="js"
+										src={technology}
+									/>
+								</Grid>
+							);
+						})}
 					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="1" />
+				</SubCard>
+				<SubCard title="Backend">
+					<Grid container spacing={2}>
+						{backendLogos.map((technology, index) => {
+							return (
+								<Grid
+									key={index}
+									style={{
+										display: 'flex',
+										justifyContent: 'center',
+										alignItems: 'center',
+									}}
+									item
+									xs={12}
+									sm={6}
+									lg={3}
+								>
+									<img
+										style={{
+											maxHeight: 50,
+										}}
+										alt="js"
+										src={technology}
+									/>
+								</Grid>
+							);
+						})}
 					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="2" />
-					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="3" />
-					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="2" />
-					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="3" />
-					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="2" />
-					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="3" />
-					</Grid>
-				</Grid>
-			</SubCard>
-			<SubCard title="Basic Shadow">
-				<Grid container spacing={gridSpacing}>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="0" />
-					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="1" />
-					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="2" />
-					</Grid>
-					<Grid item xs={12} sm={6} md={4} lg={3}>
-						<ShadowBox shadow="3" />
-					</Grid>
-				</Grid>
-			</SubCard>
-		</Grid>
-	</Container>
-);
+				</SubCard>
+			</Grid>
+		</Container>
+	);
+};
 
 export default Technologies;
