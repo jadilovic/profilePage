@@ -47,15 +47,15 @@ const SubCard = forwardRef(
 				{/* card header and action */}
 				{!darkTitle && title && (
 					<CardHeader
-						// sx={{ p: 2.5 }}
-						title={<Typography variant="h5">{title}</Typography>}
+						sx={{ p: 1.25 }}
+						title={<Typography variant="h6">{title}</Typography>}
 						action={secondary}
 					/>
 				)}
 				{darkTitle && title && (
 					<CardHeader
-						// sx={{ p: 2.5 }}
-						title={<Typography variant="h4">{title}</Typography>}
+						sx={{ p: 1.25 }}
+						title={<Typography variant="h6">{title}</Typography>}
 						action={secondary}
 					/>
 				)}

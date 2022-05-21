@@ -17,6 +17,7 @@ import java from '../images/java.png';
 import ExpressJS from '../images/ExpressJS.png';
 import nodeJs from '../images/nodeJs.png';
 import spring from '../images/spring.png';
+import mysql from '../images/mysql.png';
 
 // ===============================|| SHADOW BOX ||=============================== //
 
@@ -46,6 +47,7 @@ ShadowBox.propTypes = {
 const Technologies = () => {
 	const frontendLogos = [javaScript, reactJs, bootstrap, materialUi];
 	const backendLogos = [java, spring, nodeJs, ExpressJS];
+	const databaseLogos = [mysql, java, spring, java];
 	return (
 		<Container maxWidth="lg">
 			<Grid item xs={12}>
@@ -67,7 +69,7 @@ const Technologies = () => {
 								>
 									<img
 										style={{
-											maxHeight: 70,
+											height: '60px',
 										}}
 										alt="js"
 										src={technology}
@@ -95,7 +97,63 @@ const Technologies = () => {
 								>
 									<img
 										style={{
-											maxHeight: 50,
+											maxHeight: '40px',
+										}}
+										alt="js"
+										src={technology}
+									/>
+								</Grid>
+							);
+						})}
+					</Grid>
+				</SubCard>
+				<SubCard title="Databases and Cloud platforms">
+					<Grid container spacing={2}>
+						{databaseLogos.map((technology, index) => {
+							return (
+								<Grid
+									key={index}
+									style={{
+										display: 'flex',
+										justifyContent: 'center',
+										alignItems: 'center',
+									}}
+									item
+									xs={12}
+									sm={6}
+									lg={3}
+								>
+									<img
+										style={{
+											height: '40px',
+										}}
+										alt="js"
+										src={technology}
+									/>
+								</Grid>
+							);
+						})}
+					</Grid>
+				</SubCard>
+				<SubCard title="Code editors and other tools">
+					<Grid container spacing={2}>
+						{databaseLogos.map((technology, index) => {
+							return (
+								<Grid
+									key={index}
+									style={{
+										display: 'flex',
+										justifyContent: 'center',
+										alignItems: 'center',
+									}}
+									item
+									xs={12}
+									sm={6}
+									lg={3}
+								>
+									<img
+										style={{
+											height: '40px',
 										}}
 										alt="js"
 										src={technology}
