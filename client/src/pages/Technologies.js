@@ -18,6 +18,10 @@ import ExpressJS from '../images/ExpressJS.png';
 import nodeJs from '../images/nodeJs.png';
 import spring from '../images/spring.png';
 import mysql from '../images/mysql.png';
+import mongoDB from '../images/mongoDB.png';
+import heroku from '../images/heroku.png';
+import netlify from '../images/netlify.png';
+import eclipse from '../images/eclipse.png';
 
 // ===============================|| SHADOW BOX ||=============================== //
 
@@ -47,7 +51,8 @@ ShadowBox.propTypes = {
 const Technologies = () => {
 	const frontendLogos = [javaScript, reactJs, bootstrap, materialUi];
 	const backendLogos = [java, spring, nodeJs, ExpressJS];
-	const databaseLogos = [mysql, java, spring, java];
+	const databaseLogos = [mysql, mongoDB, heroku, netlify];
+	const editorsLogos = [eclipse, mongoDB, heroku, netlify];
 	return (
 		<Container maxWidth="lg">
 			<Grid item xs={12}>
@@ -137,7 +142,7 @@ const Technologies = () => {
 				</SubCard>
 				<SubCard title="Code editors and other tools">
 					<Grid container spacing={2}>
-						{databaseLogos.map((technology, index) => {
+						{editorsLogos.map((technology, index) => {
 							return (
 								<Grid
 									key={index}
