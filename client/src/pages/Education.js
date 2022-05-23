@@ -9,12 +9,12 @@ import davenport from '../images/davenport.png';
 function Copyright() {
 	return (
 		<Typography variant="body2" color="text.secondary">
-			{'Copyright © '}
-			<Link color="inherit" href="https://mui.com/">
-				Your Website
-			</Link>{' '}
-			{new Date().getFullYear()}
-			{'.'}
+			<Link
+				color="inherit"
+				href="https://www.linkedin.com/in/jasmin-adilovic-2561aa17/"
+			>
+				Jasmin Adilovic Full Stack Developer
+			</Link>
 		</Typography>
 	);
 }
@@ -80,7 +80,7 @@ export default function Education() {
 			>
 				<Container maxWidth="sm">
 					<Typography variant="body1">
-						My sticky footer can be found here.
+						For more information on education and skills go to LinkedIn profile
 					</Typography>
 					<Copyright />
 				</Container>

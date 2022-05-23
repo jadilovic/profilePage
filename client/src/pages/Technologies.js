@@ -1,14 +1,10 @@
 import PropTypes from 'prop-types';
 
 // material-ui
-import { Box, Card, Grid, CssBaseline, Container } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Box, Card, Grid, Container } from '@mui/material';
 
 // project imports
 import SubCard from '../components/SubCard';
-import MainCard from '../components/MainCard';
-import SecondaryAction from '../components/CardSecondaryAction';
-import { gridSpacing } from '../util/constant';
 import javaScript from '../images/javaScript.png';
 import reactJs from '../images/reactJs.png';
 import bootstrap from '../images/bootstrap.png';
@@ -22,6 +18,9 @@ import mongoDB from '../images/mongoDB.png';
 import heroku from '../images/heroku.png';
 import netlify from '../images/netlify.png';
 import eclipse from '../images/eclipse.png';
+import vsCode from '../images/vsCode.png';
+import gitHub from '../images/gitHub.png';
+import npm from '../images/npm.png';
 
 // ===============================|| SHADOW BOX ||=============================== //
 
@@ -52,7 +51,12 @@ const Technologies = () => {
 	const frontendLogos = [javaScript, reactJs, bootstrap, materialUi];
 	const backendLogos = [java, spring, nodeJs, ExpressJS];
 	const databaseLogos = [mysql, mongoDB, heroku, netlify];
-	const editorsLogos = [eclipse, mongoDB, heroku, netlify];
+	const editorsLogos = [
+		{ photo: eclipse, size: 25 },
+		{ photo: vsCode, size: 60 },
+		{ photo: gitHub, size: 35 },
+		{ photo: npm, size: 25 },
+	];
 	return (
 		<Container maxWidth="lg">
 			<Grid item xs={12}>
@@ -156,12 +160,13 @@ const Technologies = () => {
 									sm={6}
 									lg={3}
 								>
+									{console.log(technology.size)}
 									<img
 										style={{
-											height: '40px',
+											height: `${technology.size}px`,
 										}}
 										alt="js"
-										src={technology}
+										src={technology.photo}
 									/>
 								</Grid>
 							);
