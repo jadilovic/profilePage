@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
+import { Divider } from '@mui/material';
 
 function Copyright() {
 	return (
@@ -28,11 +29,13 @@ export default function Experience() {
 			}}
 		>
 			<CssBaseline />
-			<Container component="main" sx={{ mt: 2, mb: 4 }} maxWidth="sm">
+			<Container component="main" sx={{ mt: 1 }} maxWidth="sm">
 				<Typography variant="h5" component="h6" gutterBottom>
 					Experience
 				</Typography>
-				<Typography sx={{ mt: 4 }} variant="h6" component="h6" gutterBottom>
+				<Divider />
+
+				<Typography sx={{ mt: 2 }} variant="h6" component="h6" gutterBottom>
 					{'BILD NGO, Tuzla — JavaScript Web Developer'}
 				</Typography>
 				<Typography variant="body1">April 2021 - PRESENT</Typography>
@@ -40,19 +43,46 @@ export default function Experience() {
 					Contributed to business applications developed in the JavaScript MERN
 					Stack and created a few dashboard web applications of my own.
 				</Typography>
+				<Divider />
 
-				<Typography sx={{ mt: 4 }} variant="h6" component="h6" gutterBottom>
-					{'Languages: Bosnian, German and English'}
+				<Typography sx={{ mt: 2 }} variant="h6" component="h6" gutterBottom>
+					{'Freelance, Bihac — Java Web Developer'}
 				</Typography>
+				<Typography variant="body1">August 2019 - April 2021</Typography>
 				<Typography variant="body1">
-					Team building and project development.
+					Created two business inventory management CRUD Java web applications
+					with MySQL, which were deployed on Heroku.
 				</Typography>
+				<Divider />
+
+				<Typography sx={{ mt: 2 }} variant="h6" component="h6" gutterBottom>
+					{'UNDP, Doboj — Local Economic Development Officer'}
+				</Typography>
+				<Typography variant="body1">July 2016 - July 2019</Typography>
 				<Typography variant="body1">
-					Excellent partner communication.
+					mplemented economic development activities including new investments
+					and job cration in selected localities in north-east Bosnia
 				</Typography>
+				<Divider />
+				<Typography sx={{ mt: 2 }} variant="h6" component="h6" gutterBottom>
+					{'Deloitte, USAID, Tuzla — Local Economic Development Spec.'}
+				</Typography>
+				<Typography variant="body1">February 2014 - July 2016</Typography>
 				<Typography variant="body1">
-					Effective in analytical and coordination activities.
+					Facilitated creation of a target number of jobs, increased revenues,
+					enhanced exports, and investment within Tuzla region
 				</Typography>
+				<Divider />
+
+				<Typography sx={{ mt: 2 }} variant="h6" component="h6" gutterBottom>
+					{'OHR, Brčko — Special Assistant to the Supervisor'}
+				</Typography>
+				<Typography variant="body1">February 2005 - July 2013</Typography>
+				<Typography variant="body1">
+					Assisting international Supervisor in managing implementation of Brcko
+					Arbitration Awards, and Supervisory Orders
+				</Typography>
+				<Divider />
 			</Container>
 			<Box
 				component="footer"
