@@ -28,9 +28,6 @@ function Copyright() {
 			{'Copyright © j.adilovic@gmail.com '}
 			{new Date().getFullYear()}
 			{'.'}
-			<Link style={{ color: 'black' }} to={'/contact'}>
-				{' Contact Page '}
-			</Link>
 		</Typography>
 	);
 }
@@ -176,7 +173,9 @@ export default function Album() {
 			{/* Footer */}
 			<Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
 				<Typography variant="h6" align="center" gutterBottom>
-					Footer
+					<Link style={{ color: 'black' }} to={'/contact'}>
+						{'Contact'}
+					</Link>
 				</Typography>
 				<Typography
 					variant="subtitle1"
@@ -184,7 +183,7 @@ export default function Album() {
 					color="text.secondary"
 					component="p"
 				>
-					Something here to give the footer a purpose!
+					Jasmin Adilovic
 				</Typography>
 				<Copyright />
 			</Box>

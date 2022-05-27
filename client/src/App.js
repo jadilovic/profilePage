@@ -7,6 +7,7 @@ import Auth from './pages/Auth';
 import Project from './pages/Project';
 import NavBar from './components/NavBar';
 import useAuth from './util/useAuth';
+import Contact from './pages/Contact';
 import './index.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 				<Route path="/education" element={<Education />} />
 				<Route path="/experience" element={<Experience />} />
 				<Route path="/technologies" element={<Technologies />} />
+				<Route path="/contact" element={<Contact />} />
 				<Route path="/auth" element={<Auth />} />
 				<Route
 					path="/project"

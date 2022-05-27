@@ -65,7 +65,7 @@ export default function Experience() {
 				</Typography>
 				<Divider />
 				<Typography sx={{ mt: 2 }} variant="h6" component="h6" gutterBottom>
-					{'Deloitte, USAID, Tuzla — Local Economic Development Spec.'}
+					{'Deloitte, USAID, Tuzla — Local Economic Development Specialist'}
 				</Typography>
 				<Typography variant="body1">February 2014 - July 2016</Typography>
 				<Typography variant="body1">
