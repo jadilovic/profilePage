@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import davenport from '../images/davenport.png';
+import { Divider } from '@mui/material';
 
 function Copyright() {
 	return (
@@ -29,8 +30,12 @@ export default function Education() {
 			}}
 		>
 			<CssBaseline />
-			<Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
+			<Container component="main" sx={{ mt: 1, mb: 2 }} maxWidth="sm">
 				<Typography variant="h5" component="h6" gutterBottom>
+					Education
+				</Typography>
+				<Divider />
+				<Typography style={{ marginTop: '20px' }} variant="h5" component="h6">
 					Davenport University, Warren, Michigan, USA
 				</Typography>
 				<Typography variant="h6" component="h6" gutterBottom>
@@ -45,8 +50,9 @@ export default function Education() {
 						<img alt="du" height={35} src={davenport} />
 					</a>
 				</div>
+				<Divider />
 				<Typography
-					style={{ paddingTop: 45 }}
+					style={{ paddingTop: 20 }}
 					variant="h5"
 					component="h6"
 					gutterBottom

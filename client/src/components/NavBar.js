@@ -75,7 +75,6 @@ const NavBar = () => {
 					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 						<IconButton
 							style={{ backgroundColor: 'green' }}
-							size="large"
 							aria-label="account of current user"
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
@@ -103,13 +102,13 @@ const NavBar = () => {
 							}}
 						>
 							{pages.map((page) => (
-								<MenuItem key={page.page} onClick={handleCloseNavMenu}>
-									<Link to={page.path}>
-										<Typography color="black" textAlign="center">
+								<Link to={page.path} key={page.page}>
+									<MenuItem onClick={handleCloseNavMenu}>
+										<Typography variant="h6" color="black" textAlign="center">
 											{page.page}
 										</Typography>
-									</Link>
-								</MenuItem>
+									</MenuItem>
+								</Link>
 							))}
 						</Menu>
 					</Box>
@@ -166,17 +165,17 @@ const NavBar = () => {
 							onClose={handleCloseUserMenu}
 						>
 							{settings.map((item) => (
-								<MenuItem key={item.page} onClick={handleCloseUserMenu}>
-									<Link to={item.path}>
-										<Typography color="black" textAlign="center">
+								<Link to={item.path} key={item.page}>
+									<MenuItem onClick={handleCloseUserMenu}>
+										<Typography variant="h6" color="black" textAlign="center">
 											{item.page}
 										</Typography>
-									</Link>
-								</MenuItem>
+									</MenuItem>
+								</Link>
 							))}
 							{user.isAuth() && (
 								<MenuItem onClick={handleLogout}>
-									<Typography color="black" textAlign="center">
+									<Typography variant="h6" color="black" textAlign="center">
 										Logout
 									</Typography>
 								</MenuItem>

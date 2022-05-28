@@ -96,7 +96,7 @@ export default function Album() {
 						</Grid>
 						<Typography variant="h6" align="justify" color="text.secondary">
 							Experienced professional possessing a passion for programming.
-							Seeking a challenging position with a successful IT company to
+							Seeking a challenging projects with a successful IT company to
 							contribute with my technical and business skills. Below, you can
 							find some of the projects and their source code.
 						</Typography>
