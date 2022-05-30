@@ -100,7 +100,7 @@ export default function Album() {
 							contribute with my technical and business skills. Below, you can
 							find some of the projects and their source code.
 						</Typography>
-						<hr></hr>
+						{/* <hr></hr> */}
 					</Container>
 				</Box>
 				<Container sx={{ py: 1 }} maxWidth="md">
@@ -143,7 +143,7 @@ export default function Album() {
 							</Grid>
 						))}
 					</Grid>
-					<hr></hr>
+					{/* <hr></hr> */}
 					<Table>
 						<TableBody>
 							<TableRow>
