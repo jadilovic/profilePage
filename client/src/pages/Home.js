@@ -40,7 +40,9 @@ export default function Album() {
 
 	const getProjects = async () => {
 		try {
-			const response = await axios.get('http://localhost:8080/api/v1/project');
+			const response = await axios.get(
+				process.env.REACT_APP_SERVER_URL + '/api/v1/project'
+			);
 			setProjects(response.data.projects);
 			setLoading(false);
 		} catch (error) {
