@@ -96,11 +96,14 @@ function Contact() {
 								/>
 								<CardContent></CardContent>
 								<CardActions>
-									<Button fullWidth variant={tier.buttonVariant}>
-										<Link style={{ textDecoration: 'none' }} href={tier.url}>
+									<Link
+										style={{ textDecoration: 'none', width: '100%' }}
+										href={tier.url}
+									>
+										<Button fullWidth variant={tier.buttonVariant}>
 											{tier.buttonText}
-										</Link>
-									</Button>
+										</Button>
+									</Link>
 								</CardActions>
 							</Card>
 						</Grid>
