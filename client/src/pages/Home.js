@@ -72,8 +72,8 @@ export default function Album() {
 						<Grid container spacing={2} alignItems={'center'}>
 							<Grid item xs={12} sm={6}>
 								<Typography
-									component="h5"
-									variant="h5"
+									component="h6"
+									variant="h6"
 									align="center"
 									color="text.primary"
 									gutterBottom
@@ -97,7 +97,7 @@ export default function Album() {
 								</Typography>
 							</Grid>
 						</Grid>
-						<Typography variant="h6" align="justify" color="text.secondary">
+						<Typography variant="subtitle1" align="justify">
 							Experienced professional possessing a passion for programming.
 							Seeking a challenging projects with a successful IT company to
 							contribute with my technical and business skills. Below, you can

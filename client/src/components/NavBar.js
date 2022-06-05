@@ -60,7 +60,7 @@ const NavBar = () => {
 	};
 
 	return (
-		<AppBar position="relative">
+		<AppBar position="sticky">
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Typography
