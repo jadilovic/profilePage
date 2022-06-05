@@ -15,7 +15,7 @@ import {
 	Typography,
 	Container,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import softwareDeveloper from '../images/softwareDeveloper.png';
@@ -37,6 +37,7 @@ const theme = createTheme();
 export default function Album() {
 	const [projects, setProjects] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const navigate = useNavigate();
 
 	const getProjects = async () => {
 		try {
@@ -129,17 +130,33 @@ export default function Album() {
 										</Typography>
 										<Typography>{card.description}</Typography>
 									</CardContent>
-									<CardActions>
-										<Button variant="contained" size="small">
+									<CardActions style={{ justifyContent: 'center' }}>
+										{/* <Button fullWidth variant="contained" size="small">
 											<a style={{ color: 'white' }} href={card.gitHubURL}>
 												Code
 											</a>
-										</Button>
-										<Button variant="contained" color="warning" size="small">
-											<a style={{ color: 'white' }} href={card.deployedURL}>
+										</Button> */}
+										<a
+											style={{ color: 'white', width: '100%' }}
+											href={card.gitHubURL}
+										>
+											<Button fullWidth variant="contained" size="small">
+												Code
+											</Button>
+										</a>
+										<a
+											style={{ color: 'white', width: '100%' }}
+											href={card.deployedURL}
+										>
+											<Button
+												fullWidth
+												variant="contained"
+												color="warning"
+												size="small"
+											>
 												Demo
-											</a>
-										</Button>
+											</Button>
+										</a>
 									</CardActions>
 								</Card>
 							</Grid>

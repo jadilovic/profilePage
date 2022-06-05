@@ -21,18 +21,24 @@ const tiers = [
 		url: 'https://www.linkedin.com/in/jasmin-adilovic-2561aa17/',
 		buttonText: 'GO TO',
 		buttonVariant: 'outlined',
+		disabled: false,
+		cursor: 'pointer',
 	},
 	{
 		title: 'Email',
 		url: '#',
 		buttonText: 'j.adilovic@gmail.com',
 		buttonVariant: 'outlined',
+		disabled: true,
+		cursor: 'default',
 	},
 	{
 		title: 'Address',
 		url: '#',
 		buttonText: 'Bihac, Bosnia',
 		buttonVariant: 'outlined',
+		disabled: true,
+		cursor: 'default',
 	},
 ];
 
@@ -97,10 +103,19 @@ function Contact() {
 								<CardContent></CardContent>
 								<CardActions>
 									<Link
-										style={{ textDecoration: 'none', width: '100%' }}
+										style={{
+											textDecoration: 'none',
+											width: '100%',
+											cursor: tier.cursor,
+										}}
 										href={tier.url}
 									>
-										<Button fullWidth variant={tier.buttonVariant}>
+										<Button
+											style={{ color: 'black' }}
+											disabled={tier.disabled}
+											fullWidth
+											variant={tier.buttonVariant}
+										>
 											{tier.buttonText}
 										</Button>
 									</Link>
