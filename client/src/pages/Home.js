@@ -15,7 +15,7 @@ import {
 	Typography,
 	Container,
 } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import softwareDeveloper from '../images/softwareDeveloper.png';
@@ -37,7 +37,6 @@ const theme = createTheme();
 export default function Album() {
 	const [projects, setProjects] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const navigate = useNavigate();
 
 	const getProjects = async () => {
 		try {

@@ -160,7 +160,6 @@ const Technologies = () => {
 									sm={6}
 									lg={3}
 								>
-									{console.log(technology.size)}
 									<img
 										style={{
 											height: `${technology.size}px`,
